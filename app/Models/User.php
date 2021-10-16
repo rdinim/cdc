@@ -17,11 +17,33 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    protected $connection = 'pgsql_gate';
+
+    protected $table = 'sc_user';
+
     protected $fillable = [
-        'name',
-        'email',
+        'userid',
+        'username',
         'password',
+        'userdesc',
+        'email',
+        'hints',
+        'isactive',
+        'lastlogintime',
+        'lastloginip',
+        't_updateuser',
+        't_updatetime',
+        't_updateip',
+        't_update_act',
+        'softdelete',
+        'salt',
+        'tokenreset',
+        'idpegawai',
+        'tokenlogin'
     ];
+
+    protected $primaryKey = 'userid';
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -39,6 +61,27 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'userid' => 'int',
+        't_updatetime' => 'timestamp',
+        'idpegawai' => 'int'
     ];
+
+    public function student()
+    {
+        return $this->hasOne(Student::class, 'nim', 'username');
+    }
+
+    public function roles()
+    {
+        // format: belongstomany(Model, 'pivot-table', 'foreign key of current table', 'foreign key of joined table')->withPivot(['other columns of pivot table'])
+        return $this->belongsToMany(Role::class, 'sc_userrole', 'userid', 'idrole')
+            ->withPivot(['t_updateuser']);
+    }
+
+    public function units()
+    {
+        // format: belongstomany(Model, 'pivot-table', 'foreign key of current table', 'foreign key of joined table')->withPivot(['other columns of pivot table'])
+        return $this->belongsToMany(Unit::class, 'sc_userrole', 'userid', 'idsatker')
+            ->withPivot(['t_updateuser']);
+    }
 }
