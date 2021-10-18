@@ -63,4 +63,9 @@ class Gallery extends Model
 	{
 		return $this->belongsTo(User::class, 'updated_by', 'userid');
 	}
+
+	public function deleter()
+	{
+		return $this->belongsTo(User::class, 'updated_by', 'userid');
+	}
 }
