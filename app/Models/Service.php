@@ -8,6 +8,8 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 /**
  * Class Service
@@ -36,6 +38,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Service extends Model
 {
+	use SoftDeletes;
+
 	protected $connection = 'pgsql';
 
 	protected $table = 'services';

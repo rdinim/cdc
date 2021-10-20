@@ -35,5 +35,15 @@ class Location extends Model
     {
         return $this->hasMany(Student::class, 'idkota', 'idkota');
     }
+
+    public function cities()
+    {
+        return $this->hasMany(Location::class, 'parentkota', 'idkota');
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Location::class, 'parentkota', 'idkota');
+    }
     
 }

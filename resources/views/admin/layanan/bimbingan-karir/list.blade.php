@@ -17,32 +17,29 @@
           <th>Created By</th>
           <th>Updated At</th>
           <th>Updated By</th>
-          <th>Deleted At</th>
-          <th>Deleted By</th>
           <th colspan="2">Action</th>
         </tr>
         @foreach ($bimbingan_karir as $item)
             <tr>
                 <td>{{ $item->title }}</td>
-                <td>{{ $item->category->category }}</td>
-                {{-- <td>{{ $item->agendadesc }}</td> --}}
-                <td>{{ $item->schedule }}</td>
+                <td>{{ !empty($item->category->category) ? $item->category->category : '' }}</td>
+                {{-- <td>{{ $item->agendadesc }}</td> --}}    
+                <td>{{ !empty($item->schedule) ? $item->schedule->isoFormat('dddd, D MMMM Y') : '' }}</td>
                 <td>{{ $item->created_at }}</td>
-                <td>{{ $item->created_by }}</td>
+                <td>{{ !empty($item->creator->userdesc) ? $item->creator->userdesc : '' }}</td>
                 <td>{{ $item->updated_at }}</td>
-                <td>{{ $item->deleted_at }}</td>
-                <td>{{ $item->deleted_by }}</td>
-                {{-- <td><a href="{{ route('formupdatepegawai', $item->id) }}"><button>update</button></a></td>
+                <td>{{ !empty($item->editor->userdesc) ? $item->editor->userdesc : '' }}</td>
+                <td><a href="{{ route('form-update-bimbingan-karir', $item->id) }}"><button>update</button></a></td>
                 <td>
-                    <form method="post" action='{{ route('deletepegawai', $item->id) }}'>
+                    <form method="post" action='{{ route('delete-bimbingan-karir', $item->id) }}'>
                         @csrf
                         @method('DELETE')
-                        <button>delete</button>
+                        <button onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</button>
                     </form>
-                </td> --}}
+                </td>
             </tr>
         @endforeach
       </table>
-      {{-- <a href="{{ route('formpegawai') }}"><button>add</button></a> --}}
+      <a href="{{ route('form-create-bimbingan-karir') }}"><button>add</button></a>
 </body>
 </html>

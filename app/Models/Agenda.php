@@ -8,6 +8,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Agenda
@@ -32,6 +33,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Agenda extends Model
 {
+	use SoftDeletes;
+	
 	protected $table = 'agendas';
 
 	protected $connection = 'pgsql';
@@ -84,6 +87,6 @@ class Agenda extends Model
 
 	public function deleter()
 	{
-		return $this->belongsTo(User::class, 'updated_by', 'userid');
+		return $this->belongsTo(User::class, 'deleted_by', 'userid');
 	}
 }
