@@ -11,39 +11,41 @@ class Location extends Model
     use HasFactory; //untuk import trait
 
     // define connection (schema ref)
-    protected $connection = 'pgsql_ref';
+    protected $connection = 'mysql_ref';
 
-    protected $table = 'ref.lv_kota';
+    protected $table = 'wilayah';
 
     protected $casts = [
-        'idkota' => 'int',
+        'id' => 'int',
     ];
     
     protected $fillable = [
-        'parentkota',
-        'namakota',
-        'levelkota',
+        'id_wil',
+        'id_negara',
+        'nm_wil',
+        'id_level_wil',
+        'id_induk_wilayah',
     ];
 
     public function services()
     {
-        return $this->hasMany(Service::class, 'idjoblocation','idkota');
+        return $this->hasMany(Service::class, 'idjoblocation','id_wil');
 
     }
 
     public function students()
     {
-        return $this->hasMany(Student::class, 'idkota', 'idkota');
+        return $this->hasMany(Student::class, 'id_wil', 'id_wil');
     }
 
     public function cities()
     {
-        return $this->hasMany(Location::class, 'parentkota', 'idkota');
+        return $this->hasMany(Location::class, 'id_induk_wilayah', 'id_wil');
     }
 
     public function province()
     {
-        return $this->belongsTo(Location::class, 'parentkota', 'idkota');
+        return $this->belongsTo(Location::class, 'id_induk_wilayah', 'id_wil');
     }
     
 }

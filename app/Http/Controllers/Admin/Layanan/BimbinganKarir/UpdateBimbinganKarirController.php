@@ -43,7 +43,7 @@ class UpdateBimbinganKarirController extends Controller
             $filePath = FileHelper::storeFile($directory, $file, $oldFilePath);
         }
 
-        $bimbingan_karir->idcategory = $request->category;
+        $bimbingan_karir->idcategory = $request->idcategory;
         $bimbingan_karir->title = $request->title;
         $bimbingan_karir->agendadesc = $request->agendadesc;
         $bimbingan_karir->schedule = $request->schedule;

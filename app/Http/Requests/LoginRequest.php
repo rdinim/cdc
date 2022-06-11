@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class LoginRequest extends FormRequest
@@ -24,7 +25,10 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required|exists:pgsql_gate.sc_user,username',
+            'username' => [
+                'required',
+                'exists:mysql_man_akses.pengguna,username',
+            ], 
             'password' => 'required',
         ];
     }
@@ -37,7 +41,7 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'ussrname.exists' => "Your account doesn't exists. Please register yourself first.",
+            'username.exists' => "Your account doesn't exists. Please register yourself first.",
         ];
     }
 }

@@ -23,7 +23,7 @@ class CreateInfoLowonganController extends Controller
         $info_lowongan->closingdate = $request->closingdate;
         $info_lowongan->address = $request->address;
         // $info_lowongan->flyer = $request->flyer;
-        $info_lowongan->created_by = 1;
+        $info_lowongan->created_by = 'a7fada50-a015-3aa2-9f6a-6a4926a96db2';
         $info_lowongan->save();
         return redirect()->route('list-info-lowongan');
     }

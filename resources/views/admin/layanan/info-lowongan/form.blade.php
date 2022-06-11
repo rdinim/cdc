@@ -71,12 +71,12 @@
             <label for="location">Lokasi:</label><br>
                 <select name="idjoblocation" id="idjoblocation">
                     @foreach ($location as $item)
-                        <optgroup label="{{ $item->namakota }}">
+                        <optgroup label="{{ $item->nm_wil }}">
                             @php
                                 $idjoblocation = !empty($info_lowongan->idjoblocation) ? $info_lowongan->idjoblocation : null;
                             @endphp
                             @foreach ($item->cities as $city)
-                                <option value="{{ $city->idkota }}" @if ($city->idkota == $idjoblocation) selected @endif>{{ $city->namakota }}</option>
+                                <option value="{{ $city->id_wil }}" @if ($city->id_wil == $idjoblocation) selected @endif>{{ $city->nm_wil }}</option>
                             @endforeach
                         </optgroup>
                     @endforeach

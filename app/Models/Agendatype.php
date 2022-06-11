@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Agendatype extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	protected $table = 'agendatypes';
 
@@ -37,6 +37,6 @@ class Agendatype extends Model
 
 	public function agendas()
 	{
-		return $this->hasMany(Agenda::class, 'idagenda', 'id');
+		return $this->hasMany(Agenda::class, 'idagendatype', 'id');
 	}
 }

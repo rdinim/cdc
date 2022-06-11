@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Question extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	protected $table = 'questions';
 
@@ -44,7 +44,8 @@ class Question extends Model
 		'questiontype',
 		'questionparent',
 		'isrequired',
-		'slug'
+		'desc',
+		'name',
 	];
 
 	//relationship function
@@ -54,7 +55,19 @@ class Question extends Model
 		return $this->hasMany(Choice::class, 'idquestion', 'id');
 	}
 
-	public function questions()
+	//relasi untuk parentquestion (orang tua)
+	public function parentquestion()
+	{
+		return $this->belongsTo(Question::class, 'questionparent', 'id');
+	}
+
+	//relasi untuk parentquestion (orang tua)
+	public function childquestions()
+	{
+		return $this->hasMany(Question::class, 'questionparent', 'id');
+	}
+
+	public function answers()
     {
         // format: belongstomany(Model, 'pivot-table', 'foreign key of current table', 'foreign key of joined table')->withPivot(['other columns of pivot table'])
         return $this->belongsToMany(Student::class, 'answers', 'idquestion', 'idstudent')

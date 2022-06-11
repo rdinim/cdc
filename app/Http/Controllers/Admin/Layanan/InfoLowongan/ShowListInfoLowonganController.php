@@ -22,7 +22,7 @@ class ShowListInfoLowonganController extends Controller
         $list_location = Location::with([
                             'cities'
                         ])
-                        ->where('levelkota','=','0')->where('namakota','!=','Kosong')
+                        ->where('id_level_wil','=','1')
                         ->get();
 
         //get all of info lowongan data
@@ -37,16 +37,16 @@ class ShowListInfoLowonganController extends Controller
                 $query->select('id', 'position');
             },
             'location' => function($query){
-                $query->select('idkota', 'namakota');
+                $query->select('id_wil', 'nm_wil');
             },
             'creator' => function($query2){
-                $query2->select('userid','userdesc');
+                $query2->select('id_pengguna','nm_pengguna');
             },
             'editor' => function($query3){
-                $query3->select('userid','userdesc');
+                $query3->select('id_pengguna','nm_pengguna');
             },
             'deleter' => function($query4){
-                $query4->select('userid','userdesc');
+                $query4->select('id_pengguna','nm_pengguna');
             }
         ])
         ->orderBy('created_at', 'desc')

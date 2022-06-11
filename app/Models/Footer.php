@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Footer extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	protected $table = 'footers';
 

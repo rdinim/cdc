@@ -38,7 +38,7 @@
                 @foreach ($category as $item)
                     <option value="{{ $item->id }}" @if ($item->id == $idcategory) selected @endif>{{ $item->category }}</option>
                 @endforeach
-              </select><br>
+            </select><br>
 
             <label for="agendadesc">Deskripsi:</label><br>
             <textarea rows="4" cols="50" name="agendadesc">{{ !empty($bimbingan_karir->agendadesc) ? $bimbingan_karir->agendadesc : '' }}</textarea><br>

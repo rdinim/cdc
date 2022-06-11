@@ -16,16 +16,16 @@ class ShowListPengumumanController extends Controller
             $query->select('id','agendatype');
         },
         'creator' => function($query2){
-            $query2->select('userid','userdesc');
+            $query2->select('id_pengguna','nm_pengguna');
         },
         'editor' => function($query3){
-            $query3->select('userid','userdesc');
+            $query3->select('id_pengguna','nm_pengguna');
         },
         'deleter' => function($query4){
-            $query4->select('userid','userdesc');
+            $query4->select('id_pengguna','nm_pengguna');
         }
     ])
-    ->where('idagenda','=','2')
+    ->where('idagendatype','=','2')
     ->orderBy('schedule', 'desc')
     ->get();
 

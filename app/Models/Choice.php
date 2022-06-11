@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Choice extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	protected $table = 'choices';
 
@@ -36,11 +36,13 @@ class Choice extends Model
 	];
 
 	protected $fillable = [
+		'id',
 		'idquestion',
 		'choice',
-		'slug'
+		'idnextquestion',
+		'name',
 	];
-
+		
 	public function question()
 	{
 		return $this->belongsTo(Question::class, 'idquestion', 'id');

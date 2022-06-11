@@ -47,14 +47,14 @@
         
         <label for="location">Lokasi:</label><br>
             <select name="idjoblocation" id="idjoblocation">
+                <option value="">-- Lokasi --</option>
                 @foreach ($location as $item)
-                    <option value="">-- Lokasi --</option>
-                    <optgroup label="{{ $item->namakota }}">
+                    <optgroup label="{{ $item->nm_wil }}">
                         @php
                             $idjoblocation = !empty(request('idjoblocation')) ? request('idjoblocation') : null;
                         @endphp
                         @foreach ($item->cities as $city)
-                            <option value="{{ $city->idkota }}" @if ($city->idkota == $idjoblocation) selected @endif>{{ $city->namakota }}</option>
+                            <option value="{{ $city->id_wil }}" @if ($city->id_wil == $idjoblocation) selected @endif>{{ $city->nm_wil }}</option>
                         @endforeach
                     </optgroup>
                 @endforeach
@@ -91,12 +91,12 @@
                 {{-- <td>{{ $item->agendadesc }}</td> --}}    
                 <td>{{ !empty($item->openingdate) ? $item->openingdate->isoFormat('D MMMM Y') : '' }}</td>
                 <td>{{ !empty($item->closingdate) ? $item->closingdate->isoFormat('D MMMM Y') : '' }}</td>
-                <td>{{ !empty($item->location->namakota) ? $item->location->namakota : '' }}</td>
+                <td>{{ !empty($item->location->nm_wil) ? $item->location->nm_wil : '' }}</td>
                 <td>{{ !empty($item->address) ? $item->address : '' }}</td>
                 <td>{{ $item->created_at }}</td>
-                <td>{{ !empty($item->creator->userdesc) ? $item->creator->userdesc : '' }}</td>
+                <td>{{ !empty($item->creator->nm_pengguna) ? $item->creator->nm_pengguna : '' }}</td>
                 <td>{{ $item->updated_at }}</td>
-                <td>{{ !empty($item->editor->userdesc) ? $item->editor->userdesc : '' }}</td>
+                <td>{{ !empty($item->editor->nm_pengguna) ? $item->editor->nm_pengguna : '' }}</td>
                 <td><a href="{{ route('form-update-info-lowongan', $item->id) }}"><button>update</button></a></td>
                 <td>
                     <form method="post" action='{{ route('delete-info-lowongan', $item->id) }}'>

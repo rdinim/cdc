@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Industry extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	protected $table = 'industries';
 

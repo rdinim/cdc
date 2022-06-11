@@ -10,21 +10,19 @@ class Course extends Model
 {
     use HasFactory; //untuk import trait
 
-    protected $table = 'ref.ms_unit';
+    protected $table = 'sms';
 
-    protected $connection = 'pgsql_ref';
+    protected $connection = 'mysql_ref';
 
-    protected $primaryKey = 'idunit'; // add these if the primary key is not integer
+    protected $primaryKey = 'id_sms'; // add these if the primary key is not integer
 
     protected $fillable = [
-        'idunit',
-        'parentunit',
-        'namaunit'
-
+        'id_sms',
+        'nm_lemb',
     ];
 
     protected $casts = [
-        'idunit'=>'string'  // add these if the primary key is not integer
+        'id_sms'=>'string'  // add these if the primary key is not integer
     ];
 
     public $incrementing = false; // add these if the primary key is not integer
@@ -33,6 +31,6 @@ class Course extends Model
 
     public function students()
     {
-        return $this->belongsTo(Student::class, 'idunit', 'idunit');
+        return $this->belongsTo(Student::class, 'id_sms', 'id_sms');
     }
 }

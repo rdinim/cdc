@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Jobposition extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 	protected $table = 'jobpositions';
 	// public $incrementing = false;
 	public $timestamps = false;

@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class Agenda
  * 
  * @property int $id
- * @property int $idagenda
+ * @property int $idagendatype
  * @property int|null $idcategory
  * @property character varying|null $title
  * @property character varying|null $agendadesc
@@ -37,16 +37,14 @@ class Agenda extends Model
 	
 	protected $table = 'agendas';
 
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	// public $incrementing = false;
 
 	protected $casts = [
 		'id' => 'int',
-		'idagenda' => 'int',
+		'idagendatype' => 'int',
 		'idcategory' => 'int',
-		'created_by' => 'int',
-		'updated_by' => 'int'
 	];
 
 	protected $dates = [
@@ -54,7 +52,7 @@ class Agenda extends Model
 	];
 
 	protected $fillable = [
-		'idagenda',
+		'idagendatype',
 		'idcategory',
 		'title',
 		'agendadesc',
@@ -67,7 +65,7 @@ class Agenda extends Model
 
 	public function agendatype()
 	{
-		return $this->belongsTo(Agendatype::class, 'idagenda', 'id');
+		return $this->belongsTo(Agendatype::class, 'idagendatype', 'id');
 	}
 
 	public function category()
@@ -77,16 +75,16 @@ class Agenda extends Model
 
 	public function creator()
 	{
-		return $this->belongsTo(User::class, 'created_by', 'userid');
+		return $this->belongsTo(User::class, 'created_by', 'id_pengguna');
 	}
 
 	public function editor()
 	{
-		return $this->belongsTo(User::class, 'updated_by', 'userid');
+		return $this->belongsTo(User::class, 'updated_by', 'id_pengguna');
 	}
 
 	public function deleter()
 	{
-		return $this->belongsTo(User::class, 'deleted_by', 'userid');
+		return $this->belongsTo(User::class, 'deleted_by', 'id_pengguna');
 	}
 }

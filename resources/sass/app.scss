@@ -1,0 +1,31 @@
+/* ./resources/sass/app.scss */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+//Landing page
+@import './style_landingpage.scss';
+
+// Fontawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+//login
+@import './style_login.scss';
+
+//select2
+@import "~select2/dist/css/select2.css";
+
+//landing page
+.gradient-overlay {
+    background-image: url('../images/bg_blue.png');
+    height: 620px;
+  }

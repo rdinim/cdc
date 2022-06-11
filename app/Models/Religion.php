@@ -10,9 +10,9 @@ class Religion extends Model
 {
     use HasFactory; //untuk import trait
 
-    protected $table = 'ref.lv_agama';
+    protected $table = 'lv_agama';
 
-    protected $connection = 'pgsql_ref';
+    protected $connection = 'mysql_ref';
 
     protected $fillable = [
         'idagama', 

@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PtwGuide extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 	protected $table = 'ptw_guides';
 	public $incrementing = false;
 
@@ -45,16 +45,16 @@ class PtwGuide extends Model
 
 	public function creator()
 	{
-		return $this->belongsTo(User::class, 'created_by', 'userid');
+		return $this->belongsTo(User::class, 'created_by', 'id_pengguna');
 	}
 
 	public function editor()
 	{
-		return $this->belongsTo(User::class, 'updated_by', 'userid');
+		return $this->belongsTo(User::class, 'updated_by', 'id_pengguna');
 	}
 
 	public function deleter()
 	{
-		return $this->belongsTo(User::class, 'updated_by', 'userid');
+		return $this->belongsTo(User::class, 'updated_by', 'id_pengguna');
 	}
 }

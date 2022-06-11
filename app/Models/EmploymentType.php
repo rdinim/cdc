@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class EmploymentType extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	protected $table = 'employment_types';
 

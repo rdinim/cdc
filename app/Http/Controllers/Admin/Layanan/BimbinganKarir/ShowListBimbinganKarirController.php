@@ -20,16 +20,16 @@ class ShowListBimbinganKarirController extends Controller
                 $query2->select('id','category');
             },
             'creator' => function($query3){
-                $query3->select('userid','userdesc');
+                $query3->select('id_pengguna','nm_pengguna');
             },
             'editor' => function($query4){
-                $query4->select('userid','userdesc');
+                $query4->select('id_pengguna','nm_pengguna');
             },
             'deleter' => function($query4){
-                $query4->select('userid','userdesc');
+                $query4->select('id_pengguna','nm_pengguna');
             }
         ])
-        ->where('idagenda','=','1')
+        ->where('idagendatype','=','1')
         ->orderBy('created_at', 'desc')
         ->paginate(10);
 

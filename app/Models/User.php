@@ -19,32 +19,58 @@ class User extends AuthenticatableUser implements Authenticatable
      *
      * @var string[]
      */
-    protected $connection = 'pgsql_gate';
+    protected $connection = 'mysql_man_akses';
 
-    protected $table = 'sc_user';
+    protected $table = 'pengguna';
+
+     /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id_pengguna' => 'string', // add these if the primary key is not integer
+        'soft_delete' => 'int'
+    ];
+    public $incrementing = false; // add these if the primary key is not integer
+    
+    protected $keyType = 'string'; // add these if the primary key is not integer
 
     protected $fillable = [
-        'userid',
+        'id_pengguna',
         'username',
         'password',
-        'userdesc',
+        'nm_pengguna',
+        'tempat_lahir',
+        'tgl_lahir',
+        'jenis_kelamin',
+        'alamat',
+        'no_tel',
+        'no_hp',
+        'approval_pengguna',
+        'a_aktif',
+        'tgl_ganti_pwd',
+        'id_sdm_pengguna',
+        'id_wil',
+        'id_pd_pengguna',
+        'last_update',
+        'sotf_delete',
+        'last_sync',
+        'id_updater',
+        'csf',
+        'id_pegawai',
+        'bann',
         'email',
-        'hints',
-        'isactive',
-        'lastlogintime',
-        'lastloginip',
-        't_updateuser',
-        't_updatetime',
-        't_updateip',
-        't_update_act',
-        'softdelete',
-        'salt',
-        'tokenreset',
-        'idpegawai',
-        'tokenlogin'
+        'foto_moodle',
+        'moodle',
     ];
 
-    protected $primaryKey = 'userid';
+    protected $date = [
+        'tgl_lahir',
+        'tgl_ganti_pwd'
+    ];
+
+    protected $primaryKey = 'id_pengguna';
 
 
     /**
@@ -57,33 +83,20 @@ class User extends AuthenticatableUser implements Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'userid' => 'int',
-        't_updatetime' => 'timestamp',
-        'idpegawai' => 'int'
-    ];
+    // public function student()
+    // {
+    //     return $this->hasOne(Student::class, 'nim', 'username');
+    // }
 
-    public function student()
+    public function graduate()
     {
-        return $this->hasOne(Student::class, 'nim', 'username');
+        return $this->hasOne(Graduate::class, 'id_pd', 'id_pd_pengguna');
     }
 
-    public function roles()
-    {
-        // format: belongstomany(Model, 'pivot-table', 'foreign key of current table', 'foreign key of joined table')->withPivot(['other columns of pivot table'])
-        return $this->belongsToMany(Role::class, 'sc_userrole', 'userid', 'idrole')
-            ->withPivot(['t_updateuser']);
-    }
-
-    public function units()
-    {
-        // format: belongstomany(Model, 'pivot-table', 'foreign key of current table', 'foreign key of joined table')->withPivot(['other columns of pivot table'])
-        return $this->belongsToMany(Unit::class, 'sc_userrole', 'userid', 'idsatker')
-            ->withPivot(['t_updateuser']);
-    }
+    // public function units()
+    // {
+    //     // format: belongstomany(Model, 'pivot-table', 'foreign key of current table', 'foreign key of joined table')->withPivot(['other columns of pivot table'])
+    //     return $this->belongsToMany(Unit::class, 'sc_userrole', 'id_pengguna', 'idsatker')
+    //         ->withPivot(['t_updateuser']);
+    // }
 }

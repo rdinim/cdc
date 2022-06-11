@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Header extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	protected $table = 'headers';
 

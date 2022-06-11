@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Category extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 	protected $table = 'categories';
 	// public $incrementing = false;
 	public $timestamps = false;

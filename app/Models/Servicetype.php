@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Servicetype extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 	protected $table = 'servicetypes';
 	// public $incrementing = false;
 	public $timestamps = false;

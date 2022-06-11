@@ -10,19 +10,19 @@ class Country extends Model
 {
     use HasFactory; //untuk import trait
 
-    protected $table = 'ref.ms_negara';
+    protected $table = 'negara';
 
-    protected $connection = 'pgsql_ref';
+    protected $connection = 'mysql_ref';
 
-    protected $primaryKey = 'idnegara'; // add these if the primary key is not integer
+    protected $primaryKey = 'id_negara'; // add these if the primary key is not integer
 
     protected $fillable = [
-        'idnegara', 
-        'namanegara'
+        'id_negara', 
+        'nm_negara'
     ];
 
     protected $casts = [
-        'idnegara'=>'string'  // add these if the primary key is not integer
+        'id_negara'=>'string'  // add these if the primary key is not integer
     ];
 
     public $incrementing = false; // add these if the primary key is not integer
@@ -31,6 +31,6 @@ class Country extends Model
 
     public function students()
     {
-        return $this->hasMany(Student::class, 'idnegara', 'idnegara');
+        return $this->hasMany(Student::class, 'kewarganegaraan', 'id_negara');
     }
 }

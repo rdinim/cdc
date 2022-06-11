@@ -7,6 +7,8 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Spatie\Sluggable\HasSlug; 
+use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -39,8 +41,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Service extends Model
 {
 	use SoftDeletes;
+	use HasSlug;
 
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	protected $table = 'services';
 	
@@ -52,8 +55,6 @@ class Service extends Model
 		'idcompany' => 'int',
 		'idjobposition' => 'int',
 		'idjoblocation' => 'int',
-		'created_by' => 'int',
-		'updated_by' => 'int'
 	];
 
 	protected $dates = [
@@ -93,22 +94,32 @@ class Service extends Model
 
     public function location()
     {
-        return $this->belongsTo(Location::class, 'idjoblocation','idkota');
+        return $this->belongsTo(Location::class, 'idjoblocation','id_wil');
 
     }
 	
 	public function creator()
 	{
-		return $this->belongsTo(User::class, 'created_by', 'userid');
+		return $this->belongsTo(User::class, 'created_by', 'id_pengguna');
 	}
 
 	public function editor()
 	{
-		return $this->belongsTo(User::class, 'updated_by', 'userid');
+		return $this->belongsTo(User::class, 'updated_by', 'id_pengguna');
 	}
 
 	public function deleter()
 	{
-		return $this->belongsTo(User::class, 'updated_by', 'userid');
+		return $this->belongsTo(User::class, 'updated_by', 'id_pengguna');
 	}
+
+	/**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
 }

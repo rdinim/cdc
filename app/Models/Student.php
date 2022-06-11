@@ -10,66 +10,47 @@ class Student extends Model
 {
     use HasFactory; //untuk import trait
 
-    protected $table = 'akademik.ak_mahasiswa';
+    protected $connection = 'mysql_public';
 
-    protected $connection = 'pgsql_akademik';
+    protected $table = 'peserta_didik';
 
-    protected $primaryKey = 'nim'; // add these if the primary key is not integer
+    protected $primaryKey = 'id_pd'; // add these if the primary key is not integer
 
     
     protected $casts = [
-        'nim' => 'string', // add these if the primary key is not integer
-        'idagama' => 'int',
-        'idkota' => 'int',
+        'id_pd' => 'string', // add these if the primary key is not integer
+        'rt' => 'int',
+        'rw' => 'int',
     ];
     public $incrementing = false; // add these if the primary key is not integer
     
     protected $keyType = 'string'; // add these if the primary key is not integer
 
     protected $fillable = [
-        'nim',
-        'idjenistinggal',
-        'idperiode',
-        'idagama',
-        'idnegara',
-        'idsistemkuliah',
-        'idkurikulum',
-        'idjalurpendaftaran',
-        'idunit',
-        'idstatusmhs',
-        'idbs',
-        'idgelombang',
-        'idkota',
-        'idpenghasilan',
-        'idtransport',
-        'idpekerjaan',
-        'nama',
-        'alamat',
-        'telepon',
-        'hp',
-        'tmplahir',
-        'tgllahir',
-        'kodepos',
-        'jk',
-        'gelardepan',
-        'gelarbelakang',
-        'goldarah',
-        'email',
-        'nik',
-        'nokk',
+        'id_pd',
+        'nm_pd', //nama peserta didik
+        'jk', //jenis kelamin
+        'jln', //nama jalan (alamat)
         'rt',
         'rw',
-        'dusun',
-        'desa',
-        't_updateuser',
-        't_updatetime',
-        't_updateip',
-        't_updateact',
-        'softdelete',
+        'nm_dsn',
+        'ds_kel',
+        'kode_pos',
+        'nik',
+        'tmpt_lahir',
+        'tgl_lahir',
+        'no_hp',
+        'email',
+        'id_wil', //foreign key wilayah
+        'id_agama', //foreign key agama
+        'kewarganegaraan',
+        'last_update',
+        'soft_delete',
+        'id_updater',
     ];
 
     protected $date = [
-        'tgllahir'
+        'tgl_lahir'
     ];
 
     public function questions()
@@ -96,7 +77,7 @@ class Student extends Model
 
     public function location()
     {
-        return $this->belongsTo(Location::class, 'idkota', 'idkota');
+        return $this->belongsTo(Location::class, 'id_wil', 'id_wil');
     }
 
     public function country()

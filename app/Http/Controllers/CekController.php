@@ -36,7 +36,7 @@ use App\Models\Industry;
 
 class CekController extends Controller
 {
-    public function cek()
+    public function __invoke()
     {
         // $list_agenda = Industry::get(); // get all data
         // return $list_agenda;
@@ -49,7 +49,7 @@ class CekController extends Controller
         //         $query2->select('id','category');
         //     }
         // ])
-        // ->select('idagenda','idcategory','title','agendadesc','schedule')
+        // ->select('idagendatype','idcategory','title','agendadesc','schedule')
         // ->get(); //query yang melibatkan relasi
 
         // $show_model=Experience::with([
@@ -65,11 +65,15 @@ class CekController extends Controller
         //     // }
         // ])
         // ->first();
-        $show_model = Experience::with([
-            'employment_type'
-        ])->get();
 
-        return $show_model;
+
+        // $show_model = Experience::with([
+        //     'employment_type'
+        // ])->get();
+
+        // return $show_model;
+
+
 
         // $list_pengisi = User::with([
         //     'units'=> function ($query) { 
@@ -79,8 +83,12 @@ class CekController extends Controller
         //         $query->select('sc_role.idrole', 'namarole');
         //     }
         // ])
-        // ->select('userid','userdesc')
+        // ->select('id_pengguna','nm_pengguna')
         // ->get();
         // return $list_pengisi;
+
+        return view('testing');
     }
+
+        
 }

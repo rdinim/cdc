@@ -28,7 +28,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Media extends Model
 {
-	protected $connection = 'pgsql';
+	protected $connection = 'mysql';
 
 	protected $table = 'medias';
 	
@@ -57,16 +57,16 @@ class Media extends Model
 
 	public function creator()
 	{
-		return $this->belongsTo(User::class, 'created_by', 'userid');
+		return $this->belongsTo(User::class, 'created_by', 'id_pengguna');
 	}
 
 	public function editor()
 	{
-		return $this->belongsTo(User::class, 'updated_by', 'userid');
+		return $this->belongsTo(User::class, 'updated_by', 'id_pengguna');
 	}
 
 	public function deleter()
 	{
-		return $this->belongsTo(User::class, 'updated_by', 'userid');
+		return $this->belongsTo(User::class, 'updated_by', 'id_pengguna');
 	}
 }

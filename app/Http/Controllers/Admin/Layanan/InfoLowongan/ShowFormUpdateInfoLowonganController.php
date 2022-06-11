@@ -21,7 +21,7 @@ class ShowFormUpdateInfoLowonganController extends Controller
         $list_location = Location::with([
                             'cities'
                             ])
-                            ->where('levelkota','=','0')->where('namakota','!=','Kosong')
+                            ->where('id_level_wil','=','1')
                             ->get();
         return view('admin.layanan.info-lowongan.form', ['info_lowongan' => $info_lowongan, 
                                                          'servicetype' => $list_servicetype, 

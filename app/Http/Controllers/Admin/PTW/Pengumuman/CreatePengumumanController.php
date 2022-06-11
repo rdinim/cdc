@@ -12,7 +12,7 @@ class CreatePengumumanController extends Controller
     public function __invoke(PengumumanRequest $request)
     {
         $pengumuman = new Agenda;
-        $pengumuman->idagenda = 2; //default id for pengumuman
+        $pengumuman->idagendatype = 2; //default id for pengumuman
         $pengumuman->title = $request->title;
         $pengumuman->agendadesc = $request->agendadesc;
         $pengumuman->schedule = $request->schedule;

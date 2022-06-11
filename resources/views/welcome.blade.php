@@ -27,14 +27,14 @@
                 @auth
                 <div class="hidden fixed top-0 left-0 px-6 py-4 sm:block">
                     <div class="text-sm text-gray-600 dark:text-gray-400">
-                        Hi, {{ auth()->user()->userdesc }}
+                        Hi, {{ auth()->user()->nm_pengguna }}
                     </div>
                 </div>
                 @endauth
 
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-600 underline">Home</a>
+                        <a href="{{ route('homepage') }}" class="text-sm text-gray-600 underline">Home</a>
                         <form method="post" action="{{ route('logout') }}" style="display: inline;">
                             @csrf
                             <button type="submit" class="text-sm text-gray-600 underline btn-link">Logout</button>

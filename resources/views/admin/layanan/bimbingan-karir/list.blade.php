@@ -26,9 +26,9 @@
                 {{-- <td>{{ $item->agendadesc }}</td> --}}    
                 <td>{{ !empty($item->schedule) ? $item->schedule->isoFormat('dddd, D MMMM Y') : '' }}</td>
                 <td>{{ $item->created_at }}</td>
-                <td>{{ !empty($item->creator->userdesc) ? $item->creator->userdesc : '' }}</td>
+                <td>{{ !empty($item->creator->nm_pengguna) ? $item->creator->nm_pengguna : '' }}</td>
                 <td>{{ $item->updated_at }}</td>
-                <td>{{ !empty($item->editor->userdesc) ? $item->editor->userdesc : '' }}</td>
+                <td>{{ !empty($item->editor->nm_pengguna) ? $item->editor->nm_pengguna : '' }}</td>
                 <td><a href="{{ route('form-update-bimbingan-karir', $item->id) }}"><button>update</button></a></td>
                 <td>
                     <form method="post" action='{{ route('delete-bimbingan-karir', $item->id) }}'>

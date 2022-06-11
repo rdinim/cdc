@@ -32,8 +32,8 @@ class CreateBimbinganKarirController extends Controller
         }
 
         $new_bimbingankarir = new Agenda;
-        $new_bimbingankarir->idagenda = 1; //default id for bimbingan karir
-        $new_bimbingankarir->idcategory = $request->category;
+        $new_bimbingankarir->idagendatype = 1; //default id for bimbingan karir
+        $new_bimbingankarir->idcategory = $request->idcategory;
         $new_bimbingankarir->title = $request->title;
         $new_bimbingankarir->agendadesc = $request->agendadesc;
         $new_bimbingankarir->schedule = $request->schedule;
