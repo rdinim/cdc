@@ -64,7 +64,7 @@
         </div>
     </div>
     <div class="sm:flex-row pl-10 sm:pl-0 md:px-10 py-5" style="background: rgb(27,48,97); 100%);">
-        <p class="text-white text-sm text-center">Copyright © 2021 PSCDC. All rights reserved. Design by Unit IT Poltekbang Surabaya</p>
+        <p class="text-white text-sm text-center">Copyright © 2022 PSCC. All rights reserved. Design by Unit IT Poltekbang Surabaya</p>
     </div>
 </div>
 <!-- /footer -->

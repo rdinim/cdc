@@ -33,7 +33,7 @@ class LoginController extends Controller
         }
 
         //cek credential
-        $password = $credentials['password'];
+        $password = md5($credentials['password']);
 
         // jika password salah
         if ($user->password !== $password) {

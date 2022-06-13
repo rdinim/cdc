@@ -30,12 +30,12 @@ class PostKuesionerController extends Controller
             return $answer;
         }, $request->except('_token'));
         $answers = array_filter($answers);
-        dd($answers);
-        dd($request->except('_token'));
+        // dd($answers);
+        // dd($request->except('_token'));
        
         // dd($answer_kuesioner);
-        foreach ($request->except('_token') as $key => $value) {
-            dump($key);
+        foreach ($answers as $key => $value) {
+            // dump($key);
             // dump($key.':');
             // dump($value);
             if(! is_array($value))
