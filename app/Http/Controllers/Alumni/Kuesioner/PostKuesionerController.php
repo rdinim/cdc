@@ -49,11 +49,12 @@ class PostKuesionerController extends Controller
             }
             else
             {
-                foreach ($value as $key => $nilai) {
+                foreach ($value as $nilai) {
                     $answer_kuesioner = new Answer();
                     $answer_kuesioner->idstudent = auth()->user()->id_pengguna;
                     $answer_kuesioner->idquestion = Question::where('name' ,'=', $key)->first()->id;
                     $answer_kuesioner->answer = $nilai;
+                    // dd($answer_kuesioner);
                     $answer_kuesioner->save();
                 }
                 
@@ -61,14 +62,6 @@ class PostKuesionerController extends Controller
             
         }
         // die;
-        return redirect()->route('homepage');
-        // $answer_kuesioner->idservicetype = $request->idservicetype;
-        // $answer_kuesioner->idcompany = $request->idcompany;
-        // $answer_kuesioner->idjobposition = $request->idjobposition;
-        // $answer_kuesioner->idjoblocation = $request->idjoblocation;
-        // $answer_kuesioner->title = $request->title;
-
-        // $answer_kuesioner->save();
-        // return redirect()->route('detail-answer');
+        return redirect()->route('homepage')->withSuccess('Terima Kasih, Anda Sudah Berhasil Submit Kuesioner Tracer Study');
     }
 }

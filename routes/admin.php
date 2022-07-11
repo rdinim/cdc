@@ -36,4 +36,21 @@ Route::group(['middleware' => ['auth', 'auth.admin']], function () {
         //delete info lowongan
         Route::delete('/delete/{info_lowongan}', 'DeleteInfoLowonganController')->name('delete-info-lowongan');
     });
+
+    /*KUESIONER*/
+    Route::group(['namespace' => 'Admin\Kuesioner', 'prefix' => '/admin/kuesioner/'], function() {
+        // show list kuesioner answer
+        Route::get('/list', 'ShowListKuesionerAnswerController')->name('list-kuesioner-answer');
+        // // show form create info lowongan
+        // Route::get('/form-create', 'ShowFormCreateInfoLowonganController')->name('form-create-info-lowongan');
+        // // create new info lowongan
+        // Route::post('/create', 'CreateInfoLowonganController')->name('create-info-lowongan');
+        // // show form update info lowongan
+        // Route::get('/form-update/{info_lowongan}', 'ShowFormUpdateInfoLowonganController')->name('form-update-info-lowongan');
+        // // update info lowongan
+        // Route::put('/update/{info_lowongan}', 'UpdateInfoLowonganController')->name('update-info-lowongan');
+        // //delete info lowongan
+        // Route::delete('/delete/{info_lowongan}', 'DeleteInfoLowonganController')->name('delete-info-lowongan');
+    });
+
 });

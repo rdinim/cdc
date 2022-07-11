@@ -13,7 +13,7 @@
                         @endforeach
                     </select>
                 </div>
-                <button class="py-3 px-5 text-white font-semibold rounded-lg hover:bg-blue-200 transition duration-3000 cursor-pointer" style="background: rgb(123,150,212); 100%);" type="submit">
+                <button class="py-3 px-5 text-white font-semibold rounded-lg hover:bg-blue-200 transition duration-3000 cursor-pointer focus:outline-none" style="background: rgb(123,150,212); 100%);" type="submit">
                     <span>Search</span>
                 </button>
             </div>
@@ -39,7 +39,7 @@
                         <div class="md:flex-grow pl-10">
                         <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{{ $item->title }}</h2>
                         <p class="leading-relaxed">{{ substr($item->agendadesc, 0,50) }}...</p>
-                        <a class="text-indigo-500 inline-flex items-center mt-4">Info Selengkapnya
+                        <a href="{{ route('detail-bimbingan-karir', $item->id) }}" class="text-indigo-500 inline-flex items-center mt-4">Info Selengkapnya
                             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14"></path>
                             <path d="M12 5l7 7-7 7"></path>

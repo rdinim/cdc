@@ -119,6 +119,10 @@ Route::group(['namespace' => 'Website'], function() {
 
 });
 
+//maintenance-mode
+Route::get('/maintenance-mode', function(){
+    return view('maintenance-mode');
+})->name('maintenance-mode');
 
 //testing
 Route::get('/testing', 'CekController')->name('testing');

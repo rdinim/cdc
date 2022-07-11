@@ -22,18 +22,21 @@ class LoginController extends Controller
             //define approval pengguna di .env, dan membuat file login.php di config
             ->whereIn('approval_pengguna', config('login.approval_pengguna')) //  ->whereIn('approval_pengguna', ['1','100'])
             ->first();
+        // dd($user->toArray());
 
         if (empty($user)) {
             return back()->withErrors(['bukan alumni bukan admin']);
         }
         
         // jika user bukan alumni
-        if (!($user->approval_pengguna =='100' && $user->graduate->id_jns_keluar == '1')) {
-            return back()->withErrors(['bukan alumni bukan admin']);
+        if ($user->approval_pengguna =='100' && $user->graduate->id_jns_keluar != '1') {
+            return back()->withErrors(['bukan alumni']);
         }
 
         //cek credential
-        $password = md5($credentials['password']);
+        // $password = md5($credentials['password']);
+        $password = $credentials['password'];
+
 
         // jika password salah
         if ($user->password !== $password) {

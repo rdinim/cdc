@@ -46,7 +46,7 @@
                 <h2 class="mt-6 text-3xl font-bold text-white">
                   Login
                 </h2>
-                <p class="mt-2 text-sm text-gray-200">Gunakan akun Anda untuk login</p>
+                <p class="mt-2 text-sm text-gray-200">Gunakan akun SIAKAD Anda untuk login</p>
 
                 {{-- validation error alert --}}
                 @if ($errors->any())
@@ -82,16 +82,16 @@
                 </div>
                 <div class="flex items-center justify-between">
                   <div class="flex items-center">
-                    <input id="remember_me" name="remember_me" type="checkbox"
-                      class="h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded">
+                    {{-- <input id="remember_me" name="remember_me" type="checkbox"
+                      class="h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded"> --}}
                     <label for="remember_me" class="ml-2 block text-sm text-white">
-                      Ingat saya
+                      <a href="https://wa.me/6285330283588">Klik disini jika lupa username dan password Anda</a>
                     </label>
                   </div>
                   <div class="text-sm">
-                    <a href="#" class="text-indigo-400 hover:text-blue-500">
+                    {{-- <a href="#" class="text-indigo-400 hover:text-blue-500">
                       Lupa password?
-                    </a>
+                    </a> --}}
                   </div>
                 </div>
                 <div>
@@ -100,11 +100,11 @@
                     Login
                   </button>
                 </div>
-                <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
+                {{-- <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
                   <span>Belum punya akun?</span>
                   <a href="#"
                     class="text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Register</a>
-                </p>
+                </p> --}}
               </form>
             </div>
           </div>

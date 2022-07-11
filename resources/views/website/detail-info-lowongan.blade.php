@@ -29,60 +29,58 @@
             <img
               alt="Mobile Phone Stand"
               class="object-cover rounded-xl"
-            src="{{ asset('storage/images/kuliah-umum-dr-gamal.jpeg') }}"
+            src="{{ asset('storage/images/lowongan-kerja-bumn-2022.jpeg') }}"
             />
           </div>
         </div>
 
         <div class="sticky top-0">
-          <strong class="border border-blue-600 rounded-full tracking-wide px-3 font-medium py-0.5 text-xs bg-gray-100 text-blue-600"> Seminar </strong>
+          <strong class="border border-blue-600 rounded-full tracking-wide px-3 font-medium py-0.5 text-xs bg-gray-100 text-blue-600"> Lowongan Kerja </strong>
 
           <div class="flex justify-between mt-8">
             <div class="max-w-[35ch]">
               <h1 class="text-2xl font-bold">
-                Kuliah Umum Creativepreneur for Millenials
+                Lowongan Kerja BUMN 2022
               </h1>
 
-              {{-- <p class="mt-0.5 text-sm">
+              <p class="mt-0.5 text-sm">
                 Badan Usaha Milik Negara
-              </p> --}}
+              </p>
             </div>
 
-            {{-- <p class="text-lg font-bold">
+            <p class="text-lg font-bold">
               PENDAFTARAN TUTUP
-            </p> --}}
+            </p>
           </div>
 
           <div class="relative mt-4 group">
             <div class="pb-6 prose max-w-none">
               <p>
-                Membahas tentang Wirausaha kreatif yang akan diisi oleh narasumber berpengalaman, 
-                <strong>dr. Gamal Albinsaid, M.Biomed</strong>.
+                BUMN membuka lowongan besar-besaran. Program Rekrutmen Bersama BUMN ini menyediakan 2.700 lowongan kerja BUMN untuk putra-putri terbaik bangsa.
               </p>
             </div>
 
             <table class="text-md">
-              <tbody>
+              <tbody><tr>
+                  <td class="align-center w-32">Posisi</td>
+                  <td style="padding-left:5px; padding-right:5px;">:</td>
+                  <td>-</td>
+              </tr>
               <tr>
                   <td class="align-center w-32">Lokasi</td>
                   <td style="padding-left:5px; padding-right:5px; vertical-align:center;">:</td>
-                  <td>GSG Poltekbang Surabaya</td>
+                  <td>-</td>
               </tr>
               <tr>
-                  <td class="align-center w-32">Tanggal Pelaksanaan</td>
+                  <td class="align-center w-32">Tanggal Buka</td>
                   <td style="padding-left:5px; padding-right:5px;">:</td>
-                  <td>15 Juni 2022</td>
+                  <td>14 April 2022</td>
               </tr>
               <tr>
-                <td class="align-center w-32">Peserta</td>
-                <td style="padding-left:5px; padding-right:5px;">:</td>
-                <td>Taruna/i Poltekbang Surabaya</td>
-            </tr>
-            <tr>
-              <td class="align-center w-32">Fasilitas</td>
-              <td style="padding-left:5px; padding-right:5px;">:</td>
-              <td>E-sertifikat, Materi, Goodie Bag</td>
-          </tr>
+                  <td class="align-center w-32">Tanggal Tutup</td>
+                  <td style="padding-left:5px; padding-right:5px;">:</td>
+                  <td>25 April 2022</td>
+              </tr>
           </tbody></table>
           </div>
             
@@ -93,7 +91,7 @@
                 type="submit"
                 class="block px-5 py-3 text-xs font-medium text-white bg-blue-600 rounded hover:bg-blue-500"
               >
-                Daftar Sekarang
+                Apply
               </button>
             </div>
           </form>

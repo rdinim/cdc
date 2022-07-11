@@ -4,10 +4,7 @@
         <div class="flex flex-col justify-between sm:flex-row pl-10 sm:pl-0 md:px-10">
             <div class="mt-10 sm:mt-0">
                 <h4 class="text-2xl font-semibold">Poltekbang Surabaya<br>Career Development Center</h4>
-                <h1 class="text-base text-justify">Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit.
-                    Proin eget tortor non est<br>blandit volutpat in ac nisi. Sed efficitur feugiat eros,<br>
-                    sit amet tincidunt nisi bibendum in. 
-                    <br>Suspendisse et odio elementum, consectetur
+                <h1 class="text-base text-justify">ditujukan untuk membantu menyiapkan lulusan<br> sesuai dengan kompetensi yang diperlukan di dunia kerja
                 </h1>
                 <br>
                 <ul class="mt-2 text-base">
@@ -64,7 +61,7 @@
         </div>
     </div>
     <div class="sm:flex-row pl-10 sm:pl-0 md:px-10 py-5" style="background: rgb(27,48,97); 100%);">
-        <p class="text-white text-sm text-center">Copyright © 2022 PSCC. All rights reserved. Design by Unit IT Poltekbang Surabaya</p>
+        <p class="text-white text-sm text-center md:text-center sm:text-center">Copyright © 2022 PSCC. All rights reserved. Design by Unit IT Poltekbang Surabaya</p>
     </div>
 </div>
 <!-- /footer -->

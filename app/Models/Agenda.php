@@ -60,7 +60,9 @@ class Agenda extends Model
 		'flyer',
 		'slug',
 		'created_by',
-		'updated_by'
+		'updated_by',
+		'starttime',
+		'endtime',
 	];
 
 	public function agendatype()

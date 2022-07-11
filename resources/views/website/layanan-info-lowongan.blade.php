@@ -125,6 +125,69 @@
                 </div>
                 <!-- END Column -->
             @endforeach
+            <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 items-stretch">
+
+                <!-- Article -->
+                <article class="flex flex-wrap justify-center content-between overflow-hidden rounded-lg shadow-lg h-full">
+                    <div>
+                        <section class="grid place-items-center hero container max-w-screen-lg mx-auto pb-3 py-5 object-contain px-10">
+                            <img class="my-auto mx-auto h-24" src="{{ asset('storage/images/BUMN.png')  }}" alt="screenshot" >
+                        </section>
+                    </div>
+                    <div>
+                        <header class="leading-tight p-0 md:p-2 text-center">
+                            <div>
+                                <a class="no-underline hover:underline text-black" href="#">
+                                    <h4 class=" text-2xl">Lowongan Kerja BUMN 2022</h4>
+                                </a>
+                            </div>
+                            <p class=" text-lg pt-0">Badan Usaha Milik Negara</p>
+                        </header>
+                        <div class="p-8">
+                            <table class="text-sm">
+                                <tbody><tr>
+                                    <td class="align-center w-32">Posisi</td>
+                                    <td style="padding-left:5px; padding-right:5px;">:</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-center w-32">Tipe Lowongan</td>
+                                    <td style="padding-left:5px; padding-right:5px; vertical-align:center;">:</td>
+                                    <td>Lowongan kerja</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-center w-32">Lokasi</td>
+                                    <td style="padding-left:5px; padding-right:5px; vertical-align:center;">:</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-center w-32">Tanggal Buka</td>
+                                    <td style="padding-left:5px; padding-right:5px;">:</td>
+                                    <td>14 April 2022</td>
+                                </tr>
+                                <tr>
+                                    <td class="align-center w-32">Tanggal Tutup</td>
+                                    <td style="padding-left:5px; padding-right:5px;">:</td>
+                                    <td>25 April 2022</td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+
+                        <footer class="flex items-center justify-between leading-none p-2 md:p-4 ">
+                            <a class="flex items-center no-underline hover:text-blue-300 text-blue-900 mb-5" href="{{ route('detail-info-lowongan') }}">
+                                <i class="fas fa-info-circle"></i>
+                                <p class="ml-2 text-sm font-bold">
+                                    Info Selengkapnya >
+                                </p>
+                            </a>
+                        </footer>
+                    </div>
+
+                </article>
+                <!-- END Article -->
+
+            </div>
+            <!-- END Column -->
 
         </div>
         {{-- pagination --}}

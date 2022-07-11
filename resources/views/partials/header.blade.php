@@ -27,10 +27,10 @@
                             </i> <span class="ml-2">Tentang</span>
                         </a>
                         <div x-show="show" class="absolute bg-white rounded-md shadow-xl z-10 shadow-md" style="min-width:10rem">
-                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="#">Profil</a>
-                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="#">Sambutan</a>
-                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="#">Visi & Misi</a>
-                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="#">Struktur Organisasi</a>
+                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="{{ route('maintenance-mode') }}">Profil</a>
+                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="{{ route('maintenance-mode') }}">Sambutan</a>
+                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="{{ route('maintenance-mode') }}">Visi & Misi</a>
+                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="{{ route('maintenance-mode') }}">Struktur Organisasi</a>
                         </div>
                     </div>
                 </li>
@@ -62,7 +62,7 @@
                 </li>
 
                 <li>
-                    <a class="px-3 py-4 flex items-center text-xs uppercase font-bold text-gray-800 hover:text-gray-600 lg:py-2" href="#">
+                    <a class="px-3 py-4 flex items-center text-xs uppercase font-bold text-gray-800 hover:text-gray-600 lg:py-2" href="{{ route('maintenance-mode') }}">
                         <i class="h-4 w-4">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M21 3H3C2.4 3 2 3.4 2 4V10C2 10.6 2.4 11 3 11H21C21.6 11 22 10.6 22 10V4C22 3.4 21.6 3 21 3M21 13H3C2.4 13 2 13.4 2 14V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20V14C22 13.4 21.6 13 21 13Z" />
@@ -81,8 +81,8 @@
                             </i> <span class="ml-2">Media</span>
                         </a>
                         <div x-show="show" class="absolute bg-white rounded-md shadow-xl z-10 shadow-md" style="min-width:10rem">
-                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="#">Berita</a>
-                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="#">Galeri</a>
+                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="{{ route('maintenance-mode') }}">Berita</a>
+                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="{{ route('maintenance-mode') }}">Galeri</a>
                         </div>
                     </div>
                 </li>
@@ -97,8 +97,8 @@
                             </i> <span class="ml-2">PTW</span>
                         </a>
                         <div x-show="show" class="absolute bg-white rounded-md shadow-xl z-10 shadow-md" style="min-width:10rem">
-                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="#">Pengumuman</a>
-                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="#">Panduan</a>
+                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="{{ route('maintenance-mode') }}">Pengumuman</a>
+                            <a class="block px-3 py-2 text-sm capitalize text-gray-700 hover:bg-blue-300 hover:text-white" href="{{ route('maintenance-mode') }}">Panduan</a>
                         </div>
                     </div>
                 </li>

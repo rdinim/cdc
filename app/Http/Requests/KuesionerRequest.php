@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class KuesionerRequest extends FormRequest
 {
@@ -30,6 +32,7 @@ class KuesionerRequest extends FormRequest
 
         ];
     }
+
 
     public function attributes()
     {
